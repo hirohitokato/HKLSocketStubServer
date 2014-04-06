@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A593D2E18F0F02A0015BFB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A593D2D18F0F02A0015BFB6 /* Foundation.framework */; };
+		1A593D3318F0F02A0015BFB6 /* HKLSocketStubServer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A593D3218F0F02A0015BFB6 /* HKLSocketStubServer.h */; };
+		1A593D3518F0F02A0015BFB6 /* HKLSocketStubServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A593D3418F0F02A0015BFB6 /* HKLSocketStubServer.m */; };
+		1A593D3C18F0F02A0015BFB6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A593D3B18F0F02A0015BFB6 /* XCTest.framework */; };
+		1A593D3D18F0F02A0015BFB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A593D2D18F0F02A0015BFB6 /* Foundation.framework */; };
+		1A593D3F18F0F02A0015BFB6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A593D3E18F0F02A0015BFB6 /* UIKit.framework */; };
+		1A593D4218F0F02A0015BFB6 /* libHKLSocketStubServer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A593D2A18F0F02A0015BFB6 /* libHKLSocketStubServer.a */; };
+		1A593D4818F0F02A0015BFB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1A593D4618F0F02A0015BFB6 /* InfoPlist.strings */; };
+		1A593D4A18F0F02A0015BFB6 /* HKLSocketStubServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A593D4918F0F02A0015BFB6 /* HKLSocketStubServerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A593D4018F0F02A0015BFB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A593D2218F0F02A0015BFB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A593D2918F0F02A0015BFB6;
+			remoteInfo = HKLSocketStubServer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1A593D2818F0F02A0015BFB6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				1A593D3318F0F02A0015BFB6 /* HKLSocketStubServer.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1A593D2A18F0F02A0015BFB6 /* libHKLSocketStubServer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHKLSocketStubServer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A593D2D18F0F02A0015BFB6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1A593D3118F0F02A0015BFB6 /* HKLSocketStubServer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HKLSocketStubServer-Prefix.pch"; sourceTree = "<group>"; };
+		1A593D3218F0F02A0015BFB6 /* HKLSocketStubServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HKLSocketStubServer.h; sourceTree = "<group>"; };
+		1A593D3418F0F02A0015BFB6 /* HKLSocketStubServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HKLSocketStubServer.m; sourceTree = "<group>"; };
+		1A593D3A18F0F02A0015BFB6 /* HKLSocketStubServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HKLSocketStubServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A593D3B18F0F02A0015BFB6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1A593D3E18F0F02A0015BFB6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		1A593D4518F0F02A0015BFB6 /* HKLSocketStubServerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HKLSocketStubServerTests-Info.plist"; sourceTree = "<group>"; };
+		1A593D4718F0F02A0015BFB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1A593D4918F0F02A0015BFB6 /* HKLSocketStubServerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HKLSocketStubServerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A593D2718F0F02A0015BFB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A593D2E18F0F02A0015BFB6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A593D3718F0F02A0015BFB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A593D3C18F0F02A0015BFB6 /* XCTest.framework in Frameworks */,
+				1A593D3F18F0F02A0015BFB6 /* UIKit.framework in Frameworks */,
+				1A593D3D18F0F02A0015BFB6 /* Foundation.framework in Frameworks */,
+				1A593D4218F0F02A0015BFB6 /* libHKLSocketStubServer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A593D2118F0F02A0015BFB6 = {
+			isa = PBXGroup;
+			children = (
+				1A593D2F18F0F02A0015BFB6 /* HKLSocketStubServer */,
+				1A593D4318F0F02A0015BFB6 /* HKLSocketStubServerTests */,
+				1A593D2C18F0F02A0015BFB6 /* Frameworks */,
+				1A593D2B18F0F02A0015BFB6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A593D2B18F0F02A0015BFB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A593D2A18F0F02A0015BFB6 /* libHKLSocketStubServer.a */,
+				1A593D3A18F0F02A0015BFB6 /* HKLSocketStubServerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A593D2C18F0F02A0015BFB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A593D2D18F0F02A0015BFB6 /* Foundation.framework */,
+				1A593D3B18F0F02A0015BFB6 /* XCTest.framework */,
+				1A593D3E18F0F02A0015BFB6 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A593D2F18F0F02A0015BFB6 /* HKLSocketStubServer */ = {
+			isa = PBXGroup;
+			children = (
+				1A593D3218F0F02A0015BFB6 /* HKLSocketStubServer.h */,
+				1A593D3418F0F02A0015BFB6 /* HKLSocketStubServer.m */,
+				1A593D3018F0F02A0015BFB6 /* Supporting Files */,
+			);
+			path = HKLSocketStubServer;
+			sourceTree = "<group>";
+		};
+		1A593D3018F0F02A0015BFB6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A593D3118F0F02A0015BFB6 /* HKLSocketStubServer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A593D4318F0F02A0015BFB6 /* HKLSocketStubServerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A593D4918F0F02A0015BFB6 /* HKLSocketStubServerTests.m */,
+				1A593D4418F0F02A0015BFB6 /* Supporting Files */,
+			);
+			path = HKLSocketStubServerTests;
+			sourceTree = "<group>";
+		};
+		1A593D4418F0F02A0015BFB6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A593D4518F0F02A0015BFB6 /* HKLSocketStubServerTests-Info.plist */,
+				1A593D4618F0F02A0015BFB6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A593D2918F0F02A0015BFB6 /* HKLSocketStubServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A593D4D18F0F02A0015BFB6 /* Build configuration list for PBXNativeTarget "HKLSocketStubServer" */;
+			buildPhases = (
+				1A593D2618F0F02A0015BFB6 /* Sources */,
+				1A593D2718F0F02A0015BFB6 /* Frameworks */,
+				1A593D2818F0F02A0015BFB6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HKLSocketStubServer;
+			productName = HKLSocketStubServer;
+			productReference = 1A593D2A18F0F02A0015BFB6 /* libHKLSocketStubServer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		1A593D3918F0F02A0015BFB6 /* HKLSocketStubServerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A593D5018F0F02A0015BFB6 /* Build configuration list for PBXNativeTarget "HKLSocketStubServerTests" */;
+			buildPhases = (
+				1A593D3618F0F02A0015BFB6 /* Sources */,
+				1A593D3718F0F02A0015BFB6 /* Frameworks */,
+				1A593D3818F0F02A0015BFB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A593D4118F0F02A0015BFB6 /* PBXTargetDependency */,
+			);
+			name = HKLSocketStubServerTests;
+			productName = HKLSocketStubServerTests;
+			productReference = 1A593D3A18F0F02A0015BFB6 /* HKLSocketStubServerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A593D2218F0F02A0015BFB6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = KatokichiSoft;
+			};
+			buildConfigurationList = 1A593D2518F0F02A0015BFB6 /* Build configuration list for PBXProject "HKLSocketStubServer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1A593D2118F0F02A0015BFB6;
+			productRefGroup = 1A593D2B18F0F02A0015BFB6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A593D2918F0F02A0015BFB6 /* HKLSocketStubServer */,
+				1A593D3918F0F02A0015BFB6 /* HKLSocketStubServerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A593D3818F0F02A0015BFB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A593D4818F0F02A0015BFB6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A593D2618F0F02A0015BFB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A593D3518F0F02A0015BFB6 /* HKLSocketStubServer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A593D3618F0F02A0015BFB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A593D4A18F0F02A0015BFB6 /* HKLSocketStubServerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A593D4118F0F02A0015BFB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A593D2918F0F02A0015BFB6 /* HKLSocketStubServer */;
+			targetProxy = 1A593D4018F0F02A0015BFB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1A593D4618F0F02A0015BFB6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A593D4718F0F02A0015BFB6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1A593D4B18F0F02A0015BFB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1A593D4C18F0F02A0015BFB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A593D4E18F0F02A0015BFB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HKLSocketStubServer.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HKLSocketStubServer/HKLSocketStubServer-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1A593D4F18F0F02A0015BFB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/HKLSocketStubServer.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HKLSocketStubServer/HKLSocketStubServer-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1A593D5118F0F02A0015BFB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HKLSocketStubServer/HKLSocketStubServer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HKLSocketStubServerTests/HKLSocketStubServerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1A593D5218F0F02A0015BFB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HKLSocketStubServer/HKLSocketStubServer-Prefix.pch";
+				INFOPLIST_FILE = "HKLSocketStubServerTests/HKLSocketStubServerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A593D2518F0F02A0015BFB6 /* Build configuration list for PBXProject "HKLSocketStubServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A593D4B18F0F02A0015BFB6 /* Debug */,
+				1A593D4C18F0F02A0015BFB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A593D4D18F0F02A0015BFB6 /* Build configuration list for PBXNativeTarget "HKLSocketStubServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A593D4E18F0F02A0015BFB6 /* Debug */,
+				1A593D4F18F0F02A0015BFB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1A593D5018F0F02A0015BFB6 /* Build configuration list for PBXNativeTarget "HKLSocketStubServerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A593D5118F0F02A0015BFB6 /* Debug */,
+				1A593D5218F0F02A0015BFB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A593D2218F0F02A0015BFB6 /* Project object */;
+}
