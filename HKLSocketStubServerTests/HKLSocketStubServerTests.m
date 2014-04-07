@@ -105,4 +105,27 @@
     XCTAssertNoThrow([server verify], @"次のテストの前に状態を空にしておく");
 }
 
+- (void)testExternalStub {
+    HKLSocketStubServer *server = [HKLSocketStubServer stubServer];
+    HKLSocketStubResponse *response = [[HKLTCPSocketStubResponse alloc] init];
+    response.external = YES;
+    [[response forDataString:@"dummy"] andResponseString:@"fuga"];
+    [server addStubResponse:response];
+
+    NSData *data = [NSData dataWithBytes:"dummy" length:5];
+    [server responseForData:data];
+    HKLSocketStubResponse *actual = [server responseForData:data];
+
+    XCTAssertNotNil(actual, @"スタブが返ってくるはず");
+    XCTAssertEqualObjects(actual.dataString, response.dataString, @"同じデータ内容のはず");
+
+    XCTAssertNoThrow([server verify], @"外部スタブが残っていても例外を返さない");
+
+    actual = [server responseForData:data];
+    XCTAssertNotNil(actual, @"再度スタブが返ってくるはず");
+    XCTAssertEqualObjects(actual.dataString, response.dataString, @"再度得たスタブも同じデータ内容のはず");
+
+    XCTAssertNoThrow([server verify], @"外部スタブが残っていても例外を返さない");
+}
+
 @end

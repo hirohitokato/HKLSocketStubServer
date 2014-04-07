@@ -17,7 +17,8 @@
 
 @property(nonatomic,strong) NSMutableArray *stubResponses;
 
-+ (instancetype)stubServer; // return new stubServer.
++ (instancetype)sharedServer; // returns shared server (already running)
++ (instancetype)stubServer; // returns new stubServer.
 + (HKLSocketStubServer *)currentStubServer;
 + (void)setCurrentStubServer:(HKLSocketStubServer *)stubServer;
 
@@ -29,6 +30,7 @@
 - (void)stopServer;
 
 - (HKLSocketStubResponse<GCDAsyncSocketDelegate>*)responseForData:(NSData *)data;
+- (HKLSocketStubResponse<GCDAsyncSocketDelegate>*)responseWhenAccepted; // only TCP
 
 @end
 

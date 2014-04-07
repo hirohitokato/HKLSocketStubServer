@@ -91,11 +91,11 @@
 
 + (HKLSocketStubServer *)__currentStubServer:(HKLSocketStubServer *)stubServer
 {
-    __strong static id _sharedObject = nil;
+    __strong static id _currentServer = nil;
     if(![stubServer isKindOfClass:[HKLSocketStubGetter class]]){
-        _sharedObject = stubServer;
+        _currentServer = stubServer;
     }
-    return _sharedObject;
+    return _currentServer;
 }
 
 #pragma mark -
@@ -107,6 +107,23 @@
     for (NSUInteger i = 0; i < [self.stubResponses count]; i++) {
         HKLSocketStubResponse *response = (self.stubResponses)[i];
         if(response.data.length == 0 || [response.data isStartingWithData:data]){
+            if (!response.external) {
+                [self.stubResponses removeObject:response];
+            }
+            return [[[response class] alloc] initWithSocketStubResponse:response];
+        }
+    }
+    return nil;
+}
+
+- (HKLSocketStubResponse<GCDAsyncSocketDelegate>*)responseWhenAccepted
+{
+    for (NSUInteger i = 0; i < [self.stubResponses count]; i++) {
+        // Returns 1st matched response, and ignore others.
+        HKLSocketStubResponse *response = (self.stubResponses)[i];
+        if ([response isKindOfClass:[HKLTCPSocketStubResponse class]]
+            && [(HKLTCPSocketStubResponse *)response firstData] != nil) {
+
             if (!response.external) {
                 [self.stubResponses removeObject:response];
             }
@@ -163,15 +180,15 @@
 - (id)expect
 {
 
-    HKLSocketStubResponse *stub = [[HKLSocketStubResponse alloc] init];
+    HKLSocketStubResponse *stub = [[HKLTCPSocketStubResponse alloc] init];
     [self addStubResponse:stub];
     return stub;
 }
 
-- (id)stub
+- (id)tcpStub
 {
 
-    HKLSocketStubResponse *stub = [[HKLSocketStubResponse alloc] init];
+    HKLSocketStubResponse *stub = [[HKLTCPSocketStubResponse alloc] init];
     stub.external = YES;
     [self addStubResponse:stub];
     return stub;
@@ -182,6 +199,7 @@
 didAcceptNewSocket:(GCDAsyncSocket *)newSocket
 {
     [_acceptSocks addObject:newSocket];
+
     NSData *separator = [HKGlobalSettings globalSettings].separatorData;
     if (separator) {
         [newSocket readDataToData:separator
@@ -191,6 +209,12 @@ didAcceptNewSocket:(GCDAsyncSocket *)newSocket
         [newSocket readDataWithTimeout:-1
                                    tag:0];
     }
+
+    HKLSocketStubResponse<GCDAsyncSocketDelegate> *matched = [self responseWhenAccepted];
+    if (matched) {
+        [matched socket:sock didAcceptNewSocket:newSocket];
+    }
+    newSocket.userData = matched;
 }
 
 - (void)socket:(GCDAsyncSocket *)sock
@@ -199,9 +223,13 @@ didAcceptNewSocket:(GCDAsyncSocket *)newSocket
 {
     HKLSocketStubResponse<GCDAsyncSocketDelegate> *matched = [self responseForData:data];
     if (matched) {
-        // change the delegate object
-        [sock setDelegate:matched];
+        // Keep self as a socket delegate (for calling checkBlock)
+        // [sock setDelegate:matched];
+        sock.userData = matched;
 
+        if (matched.checkBlock) {
+            matched.checkBlock(data);
+        }
         [matched socket:sock didReadData:data withTag:tag];
     }
 }
@@ -210,12 +238,65 @@ didAcceptNewSocket:(GCDAsyncSocket *)newSocket
 didReadPartialDataOfLength:(NSUInteger)partialLength
                        tag:(long)tag
 {
+    if (sock.userData) {
+        HKLSocketStubResponse<GCDAsyncSocketDelegate> *matched = sock.userData;
+        [matched socket:sock didReadPartialDataOfLength:partialLength tag:tag];
+    }
+}
 
+- (NSTimeInterval)socket:(GCDAsyncSocket *)sock
+shouldTimeoutReadWithTag:(long)tag
+                 elapsed:(NSTimeInterval)elapsed
+               bytesDone:(NSUInteger)length
+{
+    if (sock.userData) {
+        HKLSocketStubResponse<GCDAsyncSocketDelegate> *matched = sock.userData;
+        return [matched socket:sock shouldTimeoutReadWithTag:tag elapsed:elapsed bytesDone:length];
+    } else {
+        return 0.0f;
+    }
+}
+
+- (void)     socket:(GCDAsyncSocket *)sock
+didWriteDataWithTag:(long)tag
+{
+    if (sock.userData) {
+        HKLSocketStubResponse<GCDAsyncSocketDelegate> *matched = sock.userData;
+        [matched socket:sock didWriteDataWithTag:tag];
+    }
+}
+
+- (void)             socket:(GCDAsyncSocket *)sock
+didWritePartialDataOfLength:(NSUInteger)partialLength
+                        tag:(long)tag
+{
+    if (sock.userData) {
+        HKLSocketStubResponse<GCDAsyncSocketDelegate> *matched = sock.userData;
+        [matched socket:sock didWritePartialDataOfLength:partialLength tag:tag];
+    }
+}
+
+- (NSTimeInterval) socket:(GCDAsyncSocket *)sock
+shouldTimeoutWriteWithTag:(long)tag
+                  elapsed:(NSTimeInterval)elapsed
+                bytesDone:(NSUInteger)length
+{
+    if (sock.userData) {
+        HKLSocketStubResponse<GCDAsyncSocketDelegate> *matched = sock.userData;
+        return [matched socket:sock shouldTimeoutWriteWithTag:tag elapsed:elapsed bytesDone:length];
+    } else {
+        return 0.0f;
+    }
 }
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock
                   withError:(NSError *)err
 {
+    if (sock.userData) {
+        HKLSocketStubResponse<GCDAsyncSocketDelegate> *matched = sock.userData;
+        [matched socketDidDisconnect:sock withError:err];
+    }
+    sock.userData = nil;
     [_acceptSocks removeObject:sock];
 }
 

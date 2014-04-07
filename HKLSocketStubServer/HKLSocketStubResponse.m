@@ -18,9 +18,16 @@
         self.responseData = response.responseData;
 
         self.processingTimeSeconds = response.processingTimeSeconds;
+        self.checkBlock = [response.checkBlock copy];
+        
         self.external = response.external;
     }
     return self;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    id copiedObject = [[[self class] allocWithZone:zone] initWithSocketStubResponse:self];
+    return copiedObject;
 }
 
 #pragma mark - Accessor
@@ -55,6 +62,22 @@
     return self;
 }
 
+// Only available for TCP (UDP is a connectionless protocol)
+- (id)andResponseWhenAccepted:(NSData *)data
+{
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must implement me in subclass."];
+    return nil;
+}
+
+// Only available for TCP (UDP is a connectionless protocol)
+- (id)andResponseStringWhenAccepted:(NSString *)dataString
+{
+    [NSException raise:NSInternalInconsistencyException
+                format:@"You must implement me in subclass."];
+    return nil;
+}
+
 - (id)andResponse:(NSData *)data
 {
     self.responseData = data;
@@ -81,4 +104,9 @@
     return self;
 }
 
+- (id)andCheckData:(HKLSocketStubDataCheckBlock)checkBLock
+{
+    self.checkBlock = [checkBLock copy];
+    return self;
+}
 @end

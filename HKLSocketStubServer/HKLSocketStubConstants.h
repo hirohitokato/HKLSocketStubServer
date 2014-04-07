@@ -8,16 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^HKLSocketStubDataCheckBlock)(NSData* data);
+
 @protocol HKLSocketStubServerChaining
+@required
+// Returns TCP stub server
 - (id)expect;
-- (id)stub;
+- (id)tcpStub;
 @end
 
 @protocol HKLSocketStubResponseChaining
+@required
 - (id)forData:(NSData *)data;
 - (id)forDataString:(NSString *)dataString;
+- (id)andResponseWhenAccepted:(NSData *)data;
+- (id)andResponseStringWhenAccepted:(NSString *)dataString;
 - (id)andResponse:(NSData *)data;
 - (id)andResponseString:(NSString *)dataString;
 - (id)andResponseResource:(NSString *)filename ofType:(NSString *)type;
 - (id)andProcessingTime:(NSTimeInterval)processingTimeSeconds;
+- (id)andCheckData:(HKLSocketStubDataCheckBlock)checkBLock;
 @end

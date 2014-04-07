@@ -10,6 +10,9 @@
 #import "HKLSocketStubResponse.h"
 #import "GCDAsyncSocket.h"
 
-@interface HKLTCPSocketStubResponse : HKLSocketStubResponse <GCDAsyncSocketDelegate>
+@interface HKLTCPSocketStubResponse : HKLSocketStubResponse
+<GCDAsyncSocketDelegate, NSCopying>
+@property (nonatomic) NSData *firstData;         // expected 1st incoming data when the connection is accepted.
+@property (nonatomic) NSString *firstDataString; // expected 1st incoming data when the connection is accepted.(UTF-8 string expression)
 
 @end
