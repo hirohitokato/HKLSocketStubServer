@@ -5,7 +5,14 @@ HKLSocketStubServer is a fake TCP server for iOS testing.
 Can register fake response by `expect` or `stub`.
 
 ```Objetive-C
-[[[server expect] forPath:@"/api/"] andJSONResponseResource:@"fake-response" ofType:@"json"];
+// e.g.) Respond a string if incoming data start with the string
+[[[server expect] forDataString:@"incoming data(left-hand match)"] respondsString:@"response data"];
+```
+
+```Objetive-C
+// e.g.) Response a data when 3-way handshake is finished
+NSData *data = [@"did connect.\0" dataUsingEncoding:NSUTF8StringEncoding];
+[[[server expect] respondsWhenAccepted:data];
 ```
 
 This is strongly inspired by awesome [NLTHTTPStubServer](https://github.com/yaakaito/NLTHTTPStubServer) which is written by [yaakaito](https://github.com/yaakaito).
