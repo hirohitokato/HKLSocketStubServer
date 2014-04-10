@@ -3,7 +3,7 @@
 //  HKLSocketStubServer
 //
 //  Created by Hirohito Kato on 2014/04/04.
-//  Copyright (c) 2014年 yourcompany. All rights reserved.
+//  Copyright (c) 2014 Hirohito Kato.
 //
 
 #import <Foundation/Foundation.h>
@@ -21,11 +21,11 @@ typedef void(^HKLSocketStubDataCheckBlock)(NSData* data);
 @required
 - (id)forData:(NSData *)data;
 - (id)forDataString:(NSString *)dataString;
-- (id)andResponseWhenAccepted:(NSData *)data;
-- (id)andResponseStringWhenAccepted:(NSString *)dataString;
-- (id)andResponse:(NSData *)data;
-- (id)andResponseString:(NSString *)dataString;
-- (id)andResponseResource:(NSString *)filename ofType:(NSString *)type;
+- (id)respondsWhenAccepted:(NSData *)data;
+- (id)respondsStringWhenAccepted:(NSString *)dataString;
+- (id)responds:(NSData *)data;
+- (id)respondsString:(NSString *)dataString;
+- (id)respondsResource:(NSString *)filename ofType:(NSString *)type;
 - (id)andProcessingTime:(NSTimeInterval)processingTimeSeconds;
 - (id)andCheckData:(HKLSocketStubDataCheckBlock)checkBLock;
 @end

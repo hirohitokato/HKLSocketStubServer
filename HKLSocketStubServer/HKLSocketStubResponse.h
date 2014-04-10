@@ -3,7 +3,7 @@
 //  HKLSocketStubServer
 //
 //  Created by Hirohito Kato on 2014/04/04.
-//  Copyright (c) 2014年 yourcompany. All rights reserved.
+//  Copyright (c) 2014 Hirohito Kato.
 //
 
 #import <Foundation/Foundation.h>

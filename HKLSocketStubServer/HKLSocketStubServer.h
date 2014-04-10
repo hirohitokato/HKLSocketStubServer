@@ -3,13 +3,15 @@
 //  HKLSocketStubServer
 //
 //  Created by Hirohito Kato on 2014/04/03.
-//  Copyright (c) 2014年 yourcompany. All rights reserved.
+//  Copyright (c) 2014 Hirohito Kato.
 //
 
 #import <Foundation/Foundation.h>
 #import "HKLSocketStubConstants.h"
 #import "HKLSocketStubResponse.h"
 #import "HKLTCPSocketStubResponse.h"
+
+extern const uint16_t kHKLDefaultListenPort;
 
 @protocol GCDAsyncSocketDelegate;
 
@@ -35,8 +37,10 @@
 @end
 
 #pragma mark - Setting objects
-@interface HKGlobalSettings : NSObject
-// stub server's listen port
+@interface HKLGlobalSettings : NSObject
+
+/** stub server's listen port
+ */
 @property (nonatomic) uint16_t listenPort;
 
 /**

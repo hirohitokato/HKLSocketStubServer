@@ -3,7 +3,7 @@
 //  HKLSocketStubServer
 //
 //  Created by Hirohito Kato on 2014/04/03.
-//  Copyright (c) 2014年 yourcompany. All rights reserved.
+//  Copyright (c) 2014 Hirohito Kato.
 //
 
 #import "HKLSocketStubServer.h"
@@ -162,7 +162,7 @@
 - (void)startServer
 {
     NSError *error;
-    uint16_t listenPort = [HKGlobalSettings globalSettings].listenPort;
+    uint16_t listenPort = [HKLGlobalSettings globalSettings].listenPort;
     BOOL result = [_server acceptOnPort:listenPort
                                   error:&error];
     if(!result)
@@ -200,7 +200,7 @@ didAcceptNewSocket:(GCDAsyncSocket *)newSocket
 {
     [_acceptSocks addObject:newSocket];
 
-    NSData *separator = [HKGlobalSettings globalSettings].separatorData;
+    NSData *separator = [HKLGlobalSettings globalSettings].separatorData;
     if (separator) {
         [newSocket readDataToData:separator
                       withTimeout:-1
@@ -305,7 +305,9 @@ shouldTimeoutWriteWithTag:(long)tag
 //-------------------------------------------------------------------
 #pragma mark - Global Settings
 //-------------------------------------------------------------------
-@implementation HKGlobalSettings
+const uint16_t kHKLDefaultListenPort = 54321;
+
+@implementation HKLGlobalSettings
 
 + (instancetype)globalSettings {
     static dispatch_once_t once = 0;
@@ -313,7 +315,7 @@ shouldTimeoutWriteWithTag:(long)tag
     dispatch_once(&once, ^{
         _sharedSettings = [[self alloc] init];
 
-        ((HKGlobalSettings*)_sharedSettings).listenPort = 54321;
+        ((HKLGlobalSettings*)_sharedSettings).listenPort = kHKLDefaultListenPort;
     });
     return _sharedSettings;
 }

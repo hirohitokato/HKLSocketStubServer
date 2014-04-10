@@ -3,7 +3,7 @@
 //  HKLSocketStubServer
 //
 //  Created by Hirohito Kato on 2014/04/04.
-//  Copyright (c) 2014年 yourcompany. All rights reserved.
+//  Copyright (c) 2014 Hirohito Kato.
 //
 
 #import "HKLSocketStubResponse.h"
@@ -63,7 +63,7 @@
 }
 
 // Only available for TCP (UDP is a connectionless protocol)
-- (id)andResponseWhenAccepted:(NSData *)data
+- (id)respondsWhenAccepted:(NSData *)data
 {
     [NSException raise:NSInternalInconsistencyException
                 format:@"You must implement me in subclass."];
@@ -71,30 +71,30 @@
 }
 
 // Only available for TCP (UDP is a connectionless protocol)
-- (id)andResponseStringWhenAccepted:(NSString *)dataString
+- (id)respondsStringWhenAccepted:(NSString *)dataString
 {
     [NSException raise:NSInternalInconsistencyException
                 format:@"You must implement me in subclass."];
     return nil;
 }
 
-- (id)andResponse:(NSData *)data
+- (id)responds:(NSData *)data
 {
     self.responseData = data;
     return self;
 }
 
-- (id)andResponseString:(NSString *)dataString
+- (id)respondsString:(NSString *)dataString
 {
     self.responseDataString = dataString;
     return self;
 }
 
-- (id)andResponseResource:(NSString *)filename ofType:(NSString *)type
+- (id)respondsResource:(NSString *)filename ofType:(NSString *)type
 {
     NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:filename ofType:type];
     NSData *data = [NSData dataWithContentsOfFile:path];
-    self.data = data;
+    self.responseData = data;
     return self;
 }
 

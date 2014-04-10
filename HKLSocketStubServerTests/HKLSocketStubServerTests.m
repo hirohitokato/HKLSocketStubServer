@@ -3,7 +3,7 @@
 //  HKLSocketStubServerTests
 //
 //  Created by Hirohito Kato on 2014/04/03.
-//  Copyright (c) 2014年 yourcompany. All rights reserved.
+//  Copyright (c) 2014 Hirohito Kato.
 //
 
 #import <XCTest/XCTest.h>
@@ -109,7 +109,7 @@
     HKLSocketStubServer *server = [HKLSocketStubServer stubServer];
     HKLSocketStubResponse *response = [[HKLTCPSocketStubResponse alloc] init];
     response.external = YES;
-    [[response forDataString:@"dummy"] andResponseString:@"fuga"];
+    [[response forDataString:@"dummy"] respondsString:@"fuga"];
     [server addStubResponse:response];
 
     NSData *data = [NSData dataWithBytes:"dummy" length:5];
