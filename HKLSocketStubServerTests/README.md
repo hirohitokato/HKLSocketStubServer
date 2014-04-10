@@ -40,10 +40,10 @@ The most simply test example using [GCDAsyncSocket](https://github.com/robbiehan
 Saying it simply, you change the server URL from real to fake.
 
 ```objective-c
-static dispatch_semaphore_t _sem_testRespondsResourceOfType;
-static NSString *_str_testRespondsResourceOfType;
+static dispatch_semaphore_t _sem_testResponse;
+static NSString *_str_response;
 
-- (void)testRespondsResourceOfType
+- (void)testResponse
 {
     HKLSocketStubServer *stubServer = [HKLSocketStubServer sharedServer];
 
@@ -57,18 +57,19 @@ static NSString *_str_testRespondsResourceOfType;
     [sock connectToHost:@"localhost" onPort:kHKLDefaultListenPort+5 error:nil];
 
     // Wait a response from HKLSocketStubServer
-    _sem_testRespondsResourceOfType = dispatch_semaphore_create(0);
-    long result = dispatch_semaphore_wait(_sem_testRespondsResourceOfType,
+    _sem_testResponse = dispatch_semaphore_create(0);
+    long result = dispatch_semaphore_wait(_sem_testResponse,
                                           dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)));
 
-    //
+    // Check the response
     XCTAssertEqual(result, 0, @"should get result immediately.");
-    XCTAssertEqualObjects(@"bar", _str_testRespondsResourceOfType,
-                          @"ファイルのデータが得られるはず");
+    XCTAssertEqualObjects(@"bar", _str_response,
+                          @"Received data should be [bar].");
+
+    // Verify all responses have been sent.
+    XCTAssertNoThrow([server verify], @"all fake responses have been sent.");
 
     _str_testRespondsResourceOfType = nil;
-
-    XCTAssertNoThrow([server verify], @"all fake responses have been sent.");
 }
 
 // GCDAsyncSocketDelegate
@@ -83,8 +84,8 @@ static NSString *_str_testRespondsResourceOfType;
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
     // Store the received string(should be "bar") and signal to the main thread.
-    _str_testRespondsResourceOfType = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    dispatch_semaphore_signal(_sem_testRespondsResourceOfType);
+    _str_response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    dispatch_semaphore_signal(_sem_testResponse);
 }
 @end
 ```
