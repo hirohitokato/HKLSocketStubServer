@@ -1,16 +1,10 @@
 PODS:
   - CocoaAsyncSocket (7.3.4)
-  - GHUnit (0.5.9)
-  - XMLDictionary (1.3)
 
 DEPENDENCIES:
   - CocoaAsyncSocket (~> 7.3.4)
-  - GHUnit
-  - XMLDictionary (~> 1.3)
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 534d09416f992fd51efb23f534742ce70b3a7999
-  GHUnit: 2f3ea0192633e92afaef959476a8d28db179797d
-  XMLDictionary: 27390d3517062694ccb307a7750250e1b687571d
 
 COCOAPODS: 0.29.0
