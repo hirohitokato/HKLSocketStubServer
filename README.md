@@ -19,17 +19,10 @@ This is strongly inspired by awesome [NLTHTTPStubServer](https://github.com/yaak
 - iOS 6.0 or higher (older version may be also available, but not tested yet)
 
 ## Installation
-### CocoaPods
-
-```ruby
-pod 'HKLSocketStubServer'
-```
-```
-pod install
-```
 
 If you install HKLSocketStubServer manually, then just add HKLSocketStubServer subdirectory to your project.
 
+I'm preparing CocoaPods spec now...
 
 ## Usage
 
