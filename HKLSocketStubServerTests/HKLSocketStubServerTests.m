@@ -29,8 +29,8 @@
 
 - (void)testSharedStubServerAccessor
 {
-    XCTAssertNotNil([HKLSocketStubServer stubServer],
-                    @"同じインスタンスが取得出来る");
+    XCTAssertEqual([HKLSocketStubServer sharedServer], [HKLSocketStubServer sharedServer],
+                   @"同じインスタンスが取得出来る");
 }
 
 - (void)testCurrentStubServerAccessser {

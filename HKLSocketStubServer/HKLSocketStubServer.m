@@ -65,9 +65,10 @@
     static dispatch_once_t pred = 0;
     __strong static HKLSocketStubServer *_sharedServer = nil;
     dispatch_once(&pred, ^{
-        _sharedServer = [self stubServer];
+        _sharedServer = [[self class] stubServer];
 
-        [_sharedServer startServer];
+        dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(),
+                       ^{ [_sharedServer startServer]; });
     });
     return _sharedServer;
 }
