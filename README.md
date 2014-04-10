@@ -145,7 +145,7 @@ Therefore, `verify` ignores response that registered by `stub`.
 
 ```objective-c
 // e.g.) Send response after 10 sec.
-[[[server stub] forPath:@"/fake"] andProcessingTime:10.0f];
+[[[server stub] forDataString:@"heavy command"] andProcessingTime:10.0f];
 ```
 
 **Check incoming data in blocks**
