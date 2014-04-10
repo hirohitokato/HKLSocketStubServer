@@ -69,7 +69,7 @@
 		1A593D5E18F0F1A50015BFB6 /* HKLSocketStubResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKLSocketStubResponseTests.m; sourceTree = "<group>"; };
 		1A593D5F18F0F1A50015BFB6 /* HKLSocketStubServerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKLSocketStubServerTests.m; sourceTree = "<group>"; };
 		1A593D6218F0FD390015BFB6 /* HKLTCPSocketStubResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKLTCPSocketStubResponseTests.m; sourceTree = "<group>"; };
-		1AFB667718F6642E00CA0FD4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = HKLSocketStubServerTests/README.md; sourceTree = SOURCE_ROOT; };
+		1AFB667718F6642E00CA0FD4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		BD586AA05696403D941B2DB1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		EA00F6CCE28D49F8A90D2676 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
