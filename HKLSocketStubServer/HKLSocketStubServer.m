@@ -67,8 +67,12 @@
     dispatch_once(&pred, ^{
         _sharedServer = [[self class] stubServer];
 
-        dispatch_after(DISPATCH_TIME_NOW, dispatch_get_main_queue(),
-                       ^{ [_sharedServer startServer]; });
+        // If other server has been started on the same port, bind() will fail.
+        @try {
+            [_sharedServer startServer];
+        } @catch (NSException *exception) {
+            NSLog(@"%@", exception.description);
+        } @finally {};
     });
     return _sharedServer;
 }
@@ -169,7 +173,7 @@
     if(!result)
     {
         [NSException raise:NSInternalInconsistencyException
-                    format:@"error starting stub server"];
+                    format:@"%@",error.localizedDescription];
     }
 }
 
