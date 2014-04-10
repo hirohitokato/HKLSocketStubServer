@@ -37,39 +37,6 @@ If you install HKLSocketStubServer manually, then just add HKLSocketStubServer s
 #import "HKLSocketStubServer.h"
 ```
 
-**Use view controller component**
-
-```objective-c
- PECropViewController *controller = [[PECropViewController alloc] init];
- controller.delegate = self;
- controller.image = self.imageView.image;
- 
- UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
- [self presentViewController:navigationController animated:YES completion:NULL];
-```
-
-**Or use the crop view directly**
-```objective-c
-self.cropView = [[PECropView alloc] initWithFrame:contentView.bounds];
-[self.view addSubview:self.cropView];
-```
-
-### Get the cropped image
-
-**delegate method**
-```objective-c
-- (void)cropViewController:(PECropViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage
-{
-    [controller dismissViewControllerAnimated:YES completion:NULL];
-    self.imageView.image = croppedImage;
-}
-```
-
-**retrieve from view directly**
-```objective-c
-UIImage *croppedImage = self.cropView.croppedImage;
-```
-
 ### Complicated response
 
 **Simulate waiting**
