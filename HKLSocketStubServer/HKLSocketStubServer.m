@@ -10,24 +10,6 @@
 #import "HKLTCPSocketStubResponse.h"
 #import "GCDAsyncSocket.h"
 
-@interface NSData (HKNSDataUtility)
-- (BOOL)isStartingWithData:(NSData *)data;
-@end
-@implementation NSData (HKNSDataUtility)
-- (BOOL)isStartingWithData:(NSData *)data
-{
-    if (self.length < data.length) {
-        return NO;
-    }
-    const uint8_t *selfPtr = self.bytes;
-    const uint8_t *dataPtr = data.bytes;
-    if (memcmp(selfPtr, dataPtr, data.length)) {
-        return NO;
-    }
-    return YES;
-}
-@end
-
 #pragma mark -
 @interface HKLSocketStubGetter : HKLSocketStubServer
 @end
@@ -36,13 +18,11 @@
 
 #pragma mark -
 @interface HKLSocketStubServer () <GCDAsyncSocketDelegate>
+@property (nonatomic, strong) GCDAsyncSocket* server;
+@property (nonatomic, strong) NSMutableArray* acceptSocks;
 @end
 
 @implementation HKLSocketStubServer
-{
-    GCDAsyncSocket *_server;
-    NSMutableArray *_acceptSocks;
-}
 
 #pragma mark - Instance Accessor
 - (instancetype)init

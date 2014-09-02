@@ -21,6 +21,12 @@
 		1A593D6018F0F1A50015BFB6 /* HKLSocketStubResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A593D5E18F0F1A50015BFB6 /* HKLSocketStubResponseTests.m */; };
 		1A593D6118F0F1A50015BFB6 /* HKLSocketStubServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A593D5F18F0F1A50015BFB6 /* HKLSocketStubServerTests.m */; };
 		1A593D6318F0FD390015BFB6 /* HKLTCPSocketStubResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A593D6218F0FD390015BFB6 /* HKLTCPSocketStubResponseTests.m */; };
+		1AFCFC8219B558CD0051809F /* HKLUDPSocketStubResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCFC7D19B558CD0051809F /* HKLUDPSocketStubResponse.m */; };
+		1AFCFC8319B558CD0051809F /* HKLUDPSocketStubResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCFC7D19B558CD0051809F /* HKLUDPSocketStubResponse.m */; };
+		1AFCFC8419B558CD0051809F /* HKLUDPSocketStubServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCFC7F19B558CD0051809F /* HKLUDPSocketStubServer.m */; };
+		1AFCFC8519B558CD0051809F /* HKLUDPSocketStubServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCFC7F19B558CD0051809F /* HKLUDPSocketStubServer.m */; };
+		1AFCFC8619B558CD0051809F /* NSDataEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCFC8119B558CD0051809F /* NSDataEx.m */; };
+		1AFCFC8719B558CD0051809F /* NSDataEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCFC8119B558CD0051809F /* NSDataEx.m */; };
 		CA29FDE8199A458C9CC26F3D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA00F6CCE28D49F8A90D2676 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +75,12 @@
 		1A593D5F18F0F1A50015BFB6 /* HKLSocketStubServerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKLSocketStubServerTests.m; sourceTree = "<group>"; };
 		1A593D6218F0FD390015BFB6 /* HKLTCPSocketStubResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKLTCPSocketStubResponseTests.m; sourceTree = "<group>"; };
 		1AFB667718F6642E00CA0FD4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		1AFCFC7C19B558CD0051809F /* HKLUDPSocketStubResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKLUDPSocketStubResponse.h; sourceTree = "<group>"; };
+		1AFCFC7D19B558CD0051809F /* HKLUDPSocketStubResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKLUDPSocketStubResponse.m; sourceTree = "<group>"; };
+		1AFCFC7E19B558CD0051809F /* HKLUDPSocketStubServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HKLUDPSocketStubServer.h; sourceTree = "<group>"; };
+		1AFCFC7F19B558CD0051809F /* HKLUDPSocketStubServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HKLUDPSocketStubServer.m; sourceTree = "<group>"; };
+		1AFCFC8019B558CD0051809F /* NSDataEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataEx.h; sourceTree = "<group>"; };
+		1AFCFC8119B558CD0051809F /* NSDataEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataEx.m; sourceTree = "<group>"; };
 		BD586AA05696403D941B2DB1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		EA00F6CCE28D49F8A90D2676 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -131,6 +143,12 @@
 		1A593D2F18F0F02A0015BFB6 /* HKLSocketStubServer */ = {
 			isa = PBXGroup;
 			children = (
+				1AFCFC7C19B558CD0051809F /* HKLUDPSocketStubResponse.h */,
+				1AFCFC7D19B558CD0051809F /* HKLUDPSocketStubResponse.m */,
+				1AFCFC7E19B558CD0051809F /* HKLUDPSocketStubServer.h */,
+				1AFCFC7F19B558CD0051809F /* HKLUDPSocketStubServer.m */,
+				1AFCFC8019B558CD0051809F /* NSDataEx.h */,
+				1AFCFC8119B558CD0051809F /* NSDataEx.m */,
 				1A593D5318F0F1820015BFB6 /* HKLSocketStubConstants.h */,
 				1A593D3218F0F02A0015BFB6 /* HKLSocketStubServer.h */,
 				1A593D3418F0F02A0015BFB6 /* HKLSocketStubServer.m */,
@@ -294,6 +312,9 @@
 				1A593D3518F0F02A0015BFB6 /* HKLSocketStubServer.m in Sources */,
 				1A593D5D18F0F1820015BFB6 /* HKLTCPSocketStubResponse.m in Sources */,
 				1A593D5B18F0F1820015BFB6 /* HKLSocketStubResponse.m in Sources */,
+				1AFCFC8419B558CD0051809F /* HKLUDPSocketStubServer.m in Sources */,
+				1AFCFC8219B558CD0051809F /* HKLUDPSocketStubResponse.m in Sources */,
+				1AFCFC8619B558CD0051809F /* NSDataEx.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +325,9 @@
 				1A593D6118F0F1A50015BFB6 /* HKLSocketStubServerTests.m in Sources */,
 				1A593D6318F0FD390015BFB6 /* HKLTCPSocketStubResponseTests.m in Sources */,
 				1A593D6018F0F1A50015BFB6 /* HKLSocketStubResponseTests.m in Sources */,
+				1AFCFC8519B558CD0051809F /* HKLUDPSocketStubServer.m in Sources */,
+				1AFCFC8319B558CD0051809F /* HKLUDPSocketStubResponse.m in Sources */,
+				1AFCFC8719B558CD0051809F /* NSDataEx.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
